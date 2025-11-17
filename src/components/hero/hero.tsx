@@ -55,7 +55,7 @@ export default function Hero() {
     }, [lenis]);
 
     return (
-        <section className="relative w-screen h-screen flex items-end bg-[url(./hero-bg.jpg)] bg-cover bg-top-right" id="hero" ref={sectionRef}>
+        <section className="hero-section relative w-screen h-screen flex items-end " id="hero" ref={sectionRef}>
             <div className="relative w-[1012px] h-fit flex flex-col gap-2 text-[--white] ps-[80px] pb-[48px] " >
                 <div className="absolute left-0 bottom-0 w-full h-[92%] bg-blur_gradient backdrop-blur-[4px] z-[1] pointer-events-none"></div>
                 <h1 ref={textRef} className="relative z-10 text-3xl opacity-0">
