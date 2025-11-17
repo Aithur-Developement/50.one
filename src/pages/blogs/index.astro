@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Horizontal_separate from "@components/separate/horizontal-separate";
+import Navbar from "@components/navbar/navbar";
+import BlogListComponent from "@components/blog/blog-list";
+import Footer_banner from "@components/footer/footer-banner";
+import Footer from "@components/footer/footer";
+import fetchApi from '../../lib/strapi';
+import type {BlogData} from '../../interfaces/interfaces';
+
+async function getData() {
+	const blogData = await fetchApi<BlogData>({
+		endpoint: 'blogs?populate=*&pagination[pageSize]=1000',
+		wrappedByKey: 'data',
+	});
+	return { blogData };
+}
+const { blogData } = await getData();
+---
+
+<Layout
+	title="Blog Validet"
+	description=""
+>
+    <div class="relative xl:mb-[5.208vw] sm:mb-[7.813vw] mb-[56px]">
+        <Navbar client:load/>
+    </div>
+    <BlogListComponent client:load data={blogData} />
+	<div class="w-screen sm:px-4 xl:px-[8.333vw] overflow-hidden">
+		<Footer_banner client:visible/>
+	</div>
+	<div class="w-screen xl:px-[2.5vw] pt-2.5 overflow-hidden">
+		<Horizontal_separate client:load className="xl::mb-0 mb-6" />
+		<Footer client:load />
+	</div>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import "@styles/global.css";
+import { SEO } from "astro-seo";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+import "@fontsource/raleway/400.css";
+import "@fontsource/raleway/500.css";
+import "@fontsource/raleway/600.css";
+import "@fontsource/raleway/700.css";
+import "@fontsource/raleway/800.css";
+import "@fontsource/raleway/900.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/900.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/700.css";
+import "@fontsource/montserrat/800.css";
+import "@fontsource/montserrat/900.css";
+
+
+export interface Props {
+  title?: string;
+  description?: string;
+  navigation?: string;
+}
+const resolvedImageWithDomain = new URL(
+  "/poster.png",
+  Astro.url.origin
+).toString();
+
+const { title , description} = Astro.props;
+
+const makeTitle = title ? title : "50.One";
+const makeDes = description ? description : "";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <SEO title={makeTitle}
+            description={makeDes}
+            twitter={{
+            creator: "@surjithctly",
+            site: "@web3templates",
+            card: "summary_large_image",
+          }}
+          openGraph={{
+            basic: {
+              type: "website",
+              title: makeTitle,
+              image: resolvedImageWithDomain,
+            },
+
+            image: {
+              alt: makeTitle,
+          },
+        }}
+        />
+    </head>
+    <body> 
+      <slot/>
+    </body>
+</html>
+
+

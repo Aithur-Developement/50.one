@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar";
+import Hero from "@components/hero/hero";
+import About from "@components/about/about";
+import Work from "@components/work/work";
+import Services from "@components/services/services";
+---
+<Layout
+	title={''}
+	description={""}
+	>
+	<Navbar client:load/>
+	<Hero client:load/>
+	<About client:load/>
+	<Work client:load/>
+	<Services client:load/>
+</Layout>

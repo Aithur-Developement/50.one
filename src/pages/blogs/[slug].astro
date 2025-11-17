@@ -1,0 +1,43 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar";
+import BlogDetailComponent from "@components/blog/blog-detail";
+import Horizontal_separate from "@components/separate/horizontal-separate";
+import Footer_banner from "@components/footer/footer-banner";
+import Footer from "@components/footer/footer";
+import fetchApi from '../../lib/strapi';
+
+const { slug } = Astro.params;
+
+// Fetch data dynamically on request (SSR)
+
+import type {BlogData} from '../../interfaces/interfaces';
+async function getData() {
+	const blogData = await fetchApi<BlogData>({
+    endpoint: `blogs?filters[slug][$eq]=${slug}&populate=*`,
+    wrappedByKey: 'data',
+  });
+
+  const bloglist = await fetchApi<BlogData>({
+    endpoint: `blogs?populate=*`,
+    wrappedByKey: 'data',
+  });
+	return {blogData,bloglist};
+}
+const { blogData,bloglist} = await getData();
+---
+
+<Layout
+  title={blogData[0]?.metaTitle || 'Blog Detail'}
+  description={blogData[0]?.MetaDescription || 'Read the latest blog'}
+>
+  <Navbar client:load />
+  <BlogDetailComponent client:load data={blogData[0]} blogList={bloglist} />
+  <div class="w-screen sm:px-4 xl:px-[8.333vw] overflow-hidden">
+		<Footer_banner client:visible/>
+	</div>
+	<div class="w-screen xl:px-[2.5vw] pt-2.5 overflow-hidden">
+		<Horizontal_separate client:load className="xl::mb-0 mb-6" />
+		<Footer client:load />
+	</div>
+</Layout>

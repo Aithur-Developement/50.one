@@ -1,0 +1,39 @@
+
+.hamburger{
+    @apply xl:w-[3.333vw] sm:w-[6.25vw] w-[40px] sm:h-[6.25vw] h-[40px] bg-[--white] border border-[--black] xl:hidden flex items-center justify-center rounded-[10px] shrink-0;
+    /* box-shadow: 81.009px 86.169px 33.023px 0px rgba(65, 51, 12, 0.00), 51.598px 55.21px 30.443px 0px rgba(65, 51, 12, 0.01), 28.895px 30.959px 25.799px 0px rgba(65, 51, 12, 0.05), 12.9px 13.931px 19.091px 0px rgba(65, 51, 12, 0.09), 3.096px 3.612px 10.32px 0px rgba(65, 51, 12, 0.10); */
+    transition: var(--transition);
+}
+.hamburger.show{
+    @apply bg-[--primary] text-[--white] border-[--primary];
+}
+.hamburger .icon{
+    @apply w-[14px] 3xl:w-[0.729vw] flex flex-col 3xl:gap-[0.208vw] gap-1 items-end sm:scale-100 scale-[0.8];
+}
+.hamburger .icon span{
+    transition: var(--transition);
+    @apply w-full h-[2px] 3xl:h-[0.104vw] rounded-[8px] bg-[--black] shrink-0;
+}
+.hamburger.show .icon span{
+/* .hamburger:hover .icon span{ */
+    @apply bg-[--white]
+}
+.hamburger .icon span:nth-child(2){
+    @apply w-[9px] 3xl:w-[0.469vw]
+}
+
+.hamburger.show .icon span:nth-child(1){
+/* .hamburger:hover .icon span:nth-child(1) { */
+    @apply translate-y-[6px] 3xl:translate-y-[0.313vw] rotate-[-45deg];
+}
+  
+.hamburger.show .icon span:nth-child(2){
+/* .hamburger:hover .icon span:nth-child(2) { */
+    width: 0;
+    opacity: 0;
+}
+  
+.hamburger.show .icon span:nth-child(3){
+/* .hamburger:hover .icon span:nth-child(3) { */
+    @apply translate-y-[-6px] 3xl:translate-y-[-0.313vw] rotate-[45deg];
+}

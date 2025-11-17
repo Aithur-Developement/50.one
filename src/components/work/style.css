@@ -1,0 +1,31 @@
+.works {
+    @apply relative max-w-full px-4;
+    /* --slide-height: 19rem;
+    --slide-spacing: 1rem; */ 
+    /* --slide-size: 530px;*/
+}
+.works::before{
+    @apply content-[''] absolute top-[0] left-0 w-full h-[156px] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
+}
+.works::after{
+    @apply content-[''] absolute bottom-[0] left-0 w-full h-[156px] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
+}
+
+.works__viewport {
+    @apply relative overflow-hidden pointer-events-none;
+}
+
+.works__container {
+    @apply flex items-stretch m-0 ;
+    /* display: flex; */
+    touch-action: pan-y pinch-zoom;
+}
+
+.works__slide {
+    @apply xl:min-w-[795px] px-[12px] py-[90px];
+    transform: translate3d(0, 0, 0);
+}
+
+.work-card {
+    @apply relative w-fit h-fit;
+}
