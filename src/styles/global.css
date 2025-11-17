@@ -72,23 +72,23 @@
   
   /* 120px || 64px || 32px*/
   .text-4xl {
-    @apply xl:text-[120px] sm:text-[6.25vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
+    @apply xl:text-[6.25vw] sm:text-[6.25vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
   }
-  /* 100px || 64px || 32px*/
+  /* 100px || 80px || 32px*/
   .text-3xl {
-    @apply xl:text-[100px] sm:text-[6.25vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
+    @apply xl:text-[5.208vw] sm:text-[7.813vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
   }
   /* 70px || 64px || 40px */
   .text-2xl {
-    @apply xl:text-[70px] sm:text-[6.25vw] text-[9.302vw] font-semibold font-raleway leading-[120%] tracking-[-0.7px] capitalize;
+    @apply xl:text-[3.646vw] sm:text-[6.25vw] text-[9.302vw] font-semibold font-raleway leading-[120%] tracking-[-0.7px] capitalize;
   }
   /* 64px || 40px */
   .text-1xl {
-    @apply xl:text-[3.333vw] sm:text-[3.906vw] text-[6.364vw] font-bold font-raleway leading-[120%];
+    @apply xl:text-[3.333vw] sm:text-[3.906vw] text-[6.364vw] font-bold font-raleway leading-[120%] capitalize;
   }
    /* 32px || */
   .text-xl {
-    @apply xl:text-[32px] sm:text-[3.516vw] text-[6.512vw] font-semibold font-raleway leading-[120%] capitalize;
+    @apply xl:text-[1.667vw] sm:text-[3.516vw] text-[6.512vw] font-semibold font-raleway leading-[120%] capitalize;
   }
   /* 28px || */
   .text-lg {
@@ -120,6 +120,24 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+  }
+
+  .custom-scrollbar {
+      @apply fixed top-0 right-[0.2vw] w-[7px] h-screen rounded-[10px] z-[99];
+  }
+
+  .custom-scrollbar-thumb {
+      @apply absolute top-0 w-full bg-[--primary] rounded-[4px] pointer-events-auto z-[9999] cursor-pointer transition-transform duration-150 ease-out;
+  }
+
+  :global(html) {
+      scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+      :global(html) {
+          scroll-behavior: auto;
+      }
   }
 
   .scroll-hidden::-webkit-scrollbar {

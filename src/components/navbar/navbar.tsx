@@ -43,18 +43,17 @@ function Navbar() {
 
     return (
         <>
-            <div className={`absolute left-0 top-0 py-[1.25vw] px-[80px] w-screen h-fit z-[120]`}>
+            <div className={`absolute left-0 top-0 py-4 sm:py-6 xl:py-[1.25vw] px-6 sm:px-[4.688vw] xl:px-[4.167vw] w-screen h-fit z-[120]`}>
                 <div className="relative w-full  flex justify-between items-center">
                     <a href="/">
-                        <img src={"/logo.png"} className="header-logo xl:w-[148px] sm:w-fit w-[110px]" alt="logo" />
+                        <img src={"/logo.png"} className="header-logo w-[100px] sm:w-[14.453vw] xl:w-[7.708vw] " alt="logo" />
                     </a>
-                    <div className="xl:flex hidden justify-end items-stretch xl:gap-[1.25vw] sm:gap-[2.344vw] gap-[3.053vw]">
-                        
+                    <div className="w-fit">
                         <Button variant={'light'} size={'large'}>
                             Get In Touch
                         </Button>
                     </div>
-                    <button className={`hamburger ${isSidebarOpen&&'show'}`} onClick={handleMenu}
+                    {/* <button className={`hamburger ${isSidebarOpen&&'show'}`} onClick={handleMenu}
                     >
                         <span className="icon">
                             <span></span>
@@ -70,7 +69,7 @@ function Navbar() {
                                 Signup for Free
                             </a>
                         </Button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div ref={backDrop} className={`fixed top-0 left-0 z-[100] w-screen h-screen bg-[#00000078] backdrop-blur-[10px] transition ${!isSidebarOpen&&'opacity-0 pointer-events-none'}`} ></div>

@@ -6,63 +6,36 @@ import { Button } from "@lib/components/ui/button";
 
 
 
+
 export default function Footer_banner() {
     const sectionRef = useRef(null);
-    
-    const textRef = useRef(null);
-    const quoteRef = useRef(null);
-    const buttonRef = useRef(null);
-
     useEffect(() => {
-        if (!textRef.current || !quoteRef.current) return;
         gsap.registerPlugin(ScrollTrigger, SplitText);
-        if (window.innerWidth > 1150) {
-            ScrollTrigger.normalizeScroll(true);
-        }
-
-        let textSplit, quoteSplit;
-        const tl = gsap.timeline({
-            scrollTrigger: { trigger: sectionRef.current, start: "top center" },
-        });
-
-        document.fonts.ready.then(() => {
-            gsap.set(textRef.current, { opacity: 1 });
-            gsap.set(quoteRef.current, { opacity: 1 });
-            gsap.set(buttonRef.current, { opacity: 1 });
-
-            textSplit = SplitText.create(textRef.current, {
-                type: "lines",
-                linesClass: "line",
-            });
-
-            quoteSplit = SplitText.create(quoteRef.current, {
-                type: "lines",
-                linesClass: "line",
-            });
-
-            tl.from(textSplit.lines, { y: 40, opacity: 0, duration: 1, stagger: 0.09, ease: "back.out(1)", })
-            tl.from(quoteSplit.lines, { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: "expo.out", }, "-=0.8")
-                .from(buttonRef.current, { opacity: 0, duration: 1, stagger: 0.1, ease: "expo.out", }, "<")
-        });
-
-        return () => {
-            textSplit && textSplit.revert();
-            quoteSplit && quoteSplit.revert();
-            tl.kill();
-        };
+        
     }, []);
 
     return (
-        <footer className="w-full px-4 sm:px-6 xl:px-[5.208vw] py-[60px] sm:py-[7.813vw] xl:py-[5.208vw] " id="footer-banner" ref={sectionRef}>
-            <div className="w-full xl:w-full bg-secondaryGradient text-center text-[--white] flex flex-col items-center gap-[22px] sm:gap-[22px] xl:gap-[1.146vw] py-[40px] sm:py-[60px] xl:py-[5.208vw] px-[24px] sm:px-[32px] xl:px-[5.208vw] rounded-48 overflow-hidden">
-                <h2 className="text-1xl opacity-0" ref={textRef}>Validate Before You Build</h2>
-                <p className="text-md opacity-0" ref={quoteRef}>Spend 5 minutes setting up your test, save thousands in development costs. Join the smart founders who validate first, build second.</p>
-                <div className="w-fit opacity-0" ref={buttonRef}>
-                    <Button variant={"light"} size={"large"} className="w-fit">
-                        Run Your First Test
-                    </Button>
+        <section className="w-full h-[500px] xl:h-[31.25vw] flex items-center justify-center overflow-hidden" id="footer-banner" ref={sectionRef}>
+            <div className="size-[720px] xl:size-[57.083vw] rotate-[45deg] flex flex-col items-center border-[2px] border-[rgba(203,205,205,0.20)]">
+                <div className="w-full flex items-center justify-between">
+                    <div className="size-[100px] xl:size-[9.688vw] border-r-[2px] border-b-[2px] border-[rgba(203,205,205,0.20)]"/>
+                    <div className="size-[100px] xl:size-[9.688vw] border-l-[2px] border-b-[2px] border-[rgba(203,205,205,0.20)]"/>
+                </div>
+                <div className="w-[calc(100%-calc(100px*2))] xl:w-[calc(100%-calc(9.688vw*2))] h-full flex items-center justify-center border-[2px] border-[rgba(203,205,205,0.20)]">
+                    <div className="w-[calc(100%-calc(84px*2))] xl:w-[calc(100%-calc(5.313vw*2))] h-[calc(100%-calc(70px*2))] xl:h-[calc(100%-calc(5.729vw*2))] rotate-[45deg] border-[2px] border-[rgba(203,205,205,0.20)]">
+                        <div className="size-full flex flex-col items-center justify-center text-center gap-6 sm:gap-[36px] xl:gap-[2.5vw] -rotate-[90deg]">
+                            <h3 className="text-1xl text-[--white]">Let’s Create together</h3>
+                            <Button variant={'primary'} size={'large'}>
+                                Contact Us
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+                <div className="w-full flex items-center justify-between">
+                    <div className="size-[100px] xl:size-[9.688vw] border-r-[2px] border-t-[2px] border-[rgba(203,205,205,0.20)]"/>
+                    <div className="size-[100px] xl:size-[9.688vw] border-l-[2px] border-t-[2px] border-[rgba(203,205,205,0.20)]"/>
                 </div>
             </div>
-        </footer>
+        </section>
     );
 }

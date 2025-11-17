@@ -1,14 +1,14 @@
 .works {
-    @apply relative max-w-full px-4;
+    @apply relative max-w-full px-4 sm:px-2 xl:px-[0.833vw];
     /* --slide-height: 19rem;
     --slide-spacing: 1rem; */ 
     /* --slide-size: 530px;*/
 }
 .works::before{
-    @apply content-[''] absolute top-[0] left-0 w-full h-[156px] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
+    @apply sm:content-[''] absolute top-[0] left-0 w-full h-[120px] sm:h-[11.719vw] xl:h-[8.125vw] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
 }
 .works::after{
-    @apply content-[''] absolute bottom-[0] left-0 w-full h-[156px] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
+    @apply sm:content-[''] absolute bottom-[0] left-0 w-full h-[120px] sm:h-[11.719vw] xl:h-[8.125vw] rounded-[100%] bg-[--secondary] z-10 pointer-events-none;
 }
 
 .works__viewport {
@@ -22,7 +22,7 @@
 }
 
 .works__slide {
-    @apply xl:min-w-[795px] px-[12px] py-[90px];
+    @apply min-w-full sm:min-w-[63.477vw] xl:min-w-[41.406vw] px-[12px] sm:p-[1.172vw] xl:px-[0.625vw] py-[60px] sm:py-[5.859vw] xl:py-[4.688vw];
     transform: translate3d(0, 0, 0);
 }
 

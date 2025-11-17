@@ -1,0 +1,25 @@
+.services {
+    @apply relative max-w-full sm:px-2 xl:px-[0.833vw];
+    /* --slide-height: 19rem;
+    --slide-spacing: 1rem; */ 
+    /* --slide-size: 530px;*/
+}
+
+.services__viewport {
+    @apply relative overflow-hidden;
+}
+
+.services__container {
+    @apply flex items-stretch m-0 ;
+    /* display: flex; */
+    touch-action: pan-y pinch-zoom;
+}
+
+.services__slide {
+    @apply w-[340px] sm:w-[44.922vw] shrink-0 px-2 sm:px-[1.172vw];
+    transform: translate3d(0, 0, 0);
+}
+
+.slide-detail {
+    @apply relative w-full h-full p-4 bg-[--black] flex flex-col justify-between gap-8;
+}

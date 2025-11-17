@@ -29,8 +29,8 @@ const buttonVariants = cva(
       },
       size: {
         default: "",
-        large: "py-4 px-[48px] text-md light",
-        sm_btn: "size-[56px]",
+        large: "py-2 sm:py-[1.563vw] xl:py-[0.833vw] px-4 sm:px-[4.688vw] xl:px-[2.5vw] text-md light",
+        sm_btn: "size-[56px] sm:size-[5.469vw] xl:size-[2.917vw]",
       },
     },
     defaultVariants: {

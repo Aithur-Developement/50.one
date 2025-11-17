@@ -5,6 +5,8 @@ import Hero from "@components/hero/hero";
 import About from "@components/about/about";
 import Work from "@components/work/work";
 import Services from "@components/services/services";
+import Footer_banner from "@components/footer/footer-banner";
+import Footer from "@components/footer/footer";
 ---
 <Layout
 	title={''}
@@ -12,7 +14,9 @@ import Services from "@components/services/services";
 	>
 	<Navbar client:load/>
 	<Hero client:load/>
-	<About client:load/>
-	<Work client:load/>
-	<Services client:load/>
+	<About client:visible/>
+	<Work client:visible/>
+	<Services client:visible/>
+	<Footer_banner client:visible/>
+	<Footer client:visible/>
 </Layout>
