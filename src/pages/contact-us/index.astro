@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/navbar/navbar";
+import Contact from "@components/contact/contact";
+import Footer from "@components/footer/footer";
+---
+<Layout
+	title={''}
+	description={""}
+	>
+    <Navbar links={true} client:load/>
+    <Contact client:load/>
+	<Footer theme="v2" client:visible/>
+</Layout>

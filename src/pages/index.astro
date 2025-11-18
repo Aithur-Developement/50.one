@@ -12,11 +12,13 @@ import Footer from "@components/footer/footer";
 	title={''}
 	description={""}
 	>
-	<Navbar client:load/>
+	<div class="absolute left-0 top-0 w-fit">
+		<Navbar links={false} client:load/>
+	</div>
 	<Hero client:load/>
 	<About client:visible/>
 	<Work client:visible/>
 	<Services client:visible/>
 	<Footer_banner client:visible/>
-	<Footer client:visible/>
+	<Footer theme="v1" client:visible/>
 </Layout>

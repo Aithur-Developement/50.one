@@ -16,8 +16,8 @@ const buttonVariants = cva(
           "border border-[--white] bg-[--white] text-[--black] hover:text-[--white] hover:border-[--white] hover:bg-[--primary] xl:rounded-[1.042vw] rounded-[20px] xl:px-[1.25vw] px-[24px] xl:py-[0.833vw] py-[16px]",
         primary:
           "bg-[--white] text-[--primary] hover:text-[--white] hover:bg-[--primary] ",
-        outline:
-          "border border-[--white] bg-[rgba(205,205,205,0.20)] backdrop-blur-[5px] text-[--white] hover:text-[--black] hover:bg-[--white] xl:rounded-[1.042vw] rounded-[20px] xl:px-[1.25vw] px-[24px] xl:py-[0.833vw] py-[16px]",
+        dark:
+          "border border-[--black] bg-[--black] text-[--white] hover:bg-[--primary] ",
         outline_dark:
           "border border-[--black]  text-[--black] hover:text-[--white] hover:bg-[--black] xl:rounded-[1.042vw] rounded-[20px] xl:px-[1.25vw] px-[24px] xl:py-[0.833vw] py-[16px]",
         outline_lightGrey:
@@ -29,7 +29,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "",
-        large: "py-2 sm:py-[1.563vw] xl:py-[0.833vw] px-4 sm:px-[4.688vw] xl:px-[2.5vw] text-md light",
+        large: "py-3 sm:py-[1.563vw] xl:py-[0.833vw] px-4 sm:px-[4.688vw] xl:px-[2.5vw] text-md light",
         sm_btn: "size-[56px] sm:size-[5.469vw] xl:size-[2.917vw]",
       },
     },

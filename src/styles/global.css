@@ -70,13 +70,13 @@
 
   /* ======================= TEXT CLASSES ======================= */
   
-  /* 120px || 64px || 32px*/
+  /* 120px || 64px || 45px*/
   .text-4xl {
     @apply xl:text-[6.25vw] sm:text-[6.25vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
   }
-  /* 100px || 80px || 32px*/
+  /* 100px || 80px || 45px*/
   .text-3xl {
-    @apply xl:text-[5.208vw] sm:text-[7.813vw] text-[7.273vw] font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
+    @apply xl:text-[5.208vw] sm:text-[7.813vw] text-[45px] font-semibold sm:font-bold font-raleway leading-[120%] tracking-[-1px] capitalize;
   }
   /* 70px || 64px || 40px */
   .text-2xl {
@@ -85,6 +85,10 @@
   /* 64px || 40px */
   .text-1xl {
     @apply xl:text-[3.333vw] sm:text-[3.906vw] text-[6.364vw] font-bold font-raleway leading-[120%] capitalize;
+  }
+  /* 45px || 40px */
+  .text-base {
+    @apply xl:text-[45px] sm:text-[3.906vw] text-[6.364vw] font-semibold font-raleway leading-[120%] capitalize;
   }
    /* 32px || */
   .text-xl {
@@ -96,10 +100,14 @@
   }
   /* 21px || */
   .text-md {
-    @apply xl:text-[1.094vw] sm:text-[2.051vw] text-[3.182vw] font-medium font-poppins leading-[150%] tracking-[1.26px];
+    @apply xl:text-[1.094vw] sm:text-[2.051vw] text-[3.182vw] font-medium font-raleway leading-[150%] tracking-[1.26px];
   }
   .text-md.light{
     @apply font-raleway
+  }
+  /* 16px || */
+  .text-18 {
+    @apply xl:text-[0.938vw] sm:text-[1.563vw] text-[2.791vw] font-medium font-montserrat leading-[150%] tracking-[0.32px];
   }
   /* 16px || */
   .text-sm {
@@ -123,7 +131,7 @@
   }
 
   .custom-scrollbar {
-      @apply fixed top-0 right-[0.2vw] w-[7px] h-screen rounded-[10px] z-[99];
+      @apply hidden sm:block fixed top-0 right-[0.2vw] w-[7px] h-screen rounded-[10px] z-[99];
   }
 
   .custom-scrollbar-thumb {
@@ -157,15 +165,15 @@
   }
 
   .line-scroll::-webkit-scrollbar-track {
-    @apply bg-darkGrey w-[2px] rounded-[10px];
+    @apply bg-[--darkGrey] w-[2px] rounded-[10px];
   }
 
   .line-scroll::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-[10px];
+    @apply bg-[--primary] rounded-[10px];
   }
 
   .line-scroll::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary;
+    @apply bg-[--primary];
   }
 
   /* #smooth-wrapper {

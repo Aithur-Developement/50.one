@@ -6,7 +6,7 @@ import { SplitText } from "gsap/dist/SplitText";
 
 
 
-export default function Footer() {
+export default function Footer(props: {theme?: 'v1' | 'v2'}) {
     const sectionRef = useRef(null);
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -14,15 +14,15 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-full flex flex-col gap-4 overflow-hidden sm:px-[34px] xl:px-[2.5vw] pb-4 sm:pb-[24px] xl:pb-[2.5vw]" id="footer" ref={sectionRef}>
-            <div className="relative w-full flex items-stretch border border-[rgba(203,205,205,0.20)]">
-                <div className="w-full p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col gap-6 xl:gap-[2.5vw] border-r border-[rgba(203,205,205,0.20)]">
+        <footer className={`w-full flex flex-col gap-4 overflow-hidden ${props.theme === 'v1'? 'sm:px-[34px] xl:px-[2.5vw]' : 'sm:px-[4.688vw] xl:px-[4.167vw]'} pb-4 sm:pb-[24px] xl:pb-[2.5vw]`} id="footer" ref={sectionRef}>
+            <div className="relative w-full flex sm:flex-row flex-col items-stretch border border-[rgba(203,205,205,0.20)]">
+                <div className="w-full p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col sm:items-start items-center sm:text-left text-center gap-4 xl:gap-[2.5vw] border-b sm:border-r border-[rgba(203,205,205,0.20)]">
                     <a href="/">
-                        <img src="./footer-logo.png" className="w-[250px] object-scale-down " alt="footer-logo" />
+                        <img src="./footer-logo.png" className="w-[150px] sm:w-[250px] object-scale-down " alt="footer-logo" />
                     </a>
                     <p className="text-sm text-[--white]">Lorem ipsum dolor sit amet consectetur. Pulvinar potenti neque metus in leo massa. Pellentesque tristique maecenas amet tellus eu elit elit leo. </p>
                 </div>
-                <div className="w-[200px] xl:w-full shrink-0 xl:shrink p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col xl:items-start items-center gap-4 xl:gap-[2.5vw] border-r border-[rgba(203,205,205,0.20)]">
+                <div className="w-full sm:w-[200px] xl:w-full sm:shrink-0 xl:shrink p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col xl:items-start items-center gap-4 border-b sm:border-r border-[rgba(203,205,205,0.20)]">
                     <button className="text-md text-[--white] hover:text-[--primary] transition">
                         Home
                     </button>
@@ -37,7 +37,7 @@ export default function Footer() {
                     </button>
                 </div>
                 <div className="w-full flex flex-col">
-                    <div className="w-full h-full flex items-center justify-center gap-6 xl:gap-[1.667vw] border-b border-[rgba(203,205,205,0.20)]">
+                    <div className="w-full h-full flex items-center justify-center p-6 gap-6 xl:gap-[1.667vw] border-b border-[rgba(203,205,205,0.20)]">
                         <a href="" className="size-[48px] sm:size-[4.688vw] xl:size-[2.5vw] flex items-center justify-center bg-[--black] text-[--white] hover:bg-[--primary] transition rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M7.65171 1.57362C6.53421 1.62612 5.77146 1.80462 5.10471 2.06637C4.41471 2.33562 3.82971 2.69637 3.24696 3.28062C2.66496 3.86487 2.30646 4.45062 2.03946 5.14137C1.78071 5.80962 1.60596 6.57312 1.55646 7.69137C1.50696 8.80887 1.49646 9.16887 1.50171 12.0196C1.50696 14.8704 1.51971 15.2281 1.57371 16.3486C1.62696 17.4654 1.80471 18.2281 2.06646 18.8956C2.33571 19.5856 2.69646 20.1706 3.28071 20.7534C3.86496 21.3354 4.44996 21.6931 5.14296 21.9609C5.81046 22.2189 6.57471 22.3951 7.69221 22.4439C8.80971 22.4926 9.16971 22.5039 12.0205 22.4986C14.8712 22.4934 15.2297 22.4806 16.3502 22.4274C17.4707 22.3741 18.229 22.1956 18.8965 21.9346C19.5865 21.6646 20.1722 21.3046 20.7542 20.7196C21.3362 20.1346 21.6947 19.5489 21.961 18.8574C22.2197 18.1899 22.3952 17.4256 22.444 16.3089C22.4927 15.1884 22.5047 14.8306 22.4987 11.9791C22.4927 9.12762 22.4807 8.77062 22.4275 7.65087C22.3742 6.53112 22.1965 5.77062 21.9347 5.10312C21.6647 4.41312 21.3047 3.82812 20.7205 3.24537C20.1362 2.66262 19.5497 2.30487 18.8582 2.03862C18.19 1.77987 17.4265 1.60362 16.309 1.55562C15.1915 1.50762 14.8315 1.49487 11.98 1.50012C9.12846 1.50537 8.77146 1.51812 7.65171 1.57212M7.77471 20.5539C6.75096 20.5096 6.19521 20.3394 5.82471 20.1969C5.33421 20.0079 4.98471 19.7791 4.61571 19.4139C4.24671 19.0486 4.01946 18.6976 3.82821 18.2079C3.68421 17.8374 3.51096 17.2824 3.46296 16.2586C3.41121 15.1524 3.39996 14.8201 3.39396 12.0166C3.38796 9.21312 3.39846 8.88162 3.44721 7.77462C3.49071 6.75162 3.66171 6.19512 3.80421 5.82462C3.99321 5.33337 4.22121 4.98462 4.58721 4.61562C4.95321 4.24662 5.30346 4.01937 5.79321 3.82812C6.16296 3.68337 6.71871 3.51162 7.74171 3.46287C8.84871 3.41037 9.18096 3.39987 11.9837 3.39387C14.7865 3.38787 15.1195 3.39837 16.2272 3.44712C17.2502 3.49137 17.8067 3.66087 18.1765 3.80412C18.667 3.99312 19.0165 4.22037 19.3855 4.58712C19.7545 4.95387 19.9817 5.30262 20.1737 5.79387C20.3185 6.16287 20.4902 6.71787 20.5382 7.74162C20.5907 8.84862 20.6027 9.18087 20.608 11.9836C20.6132 14.7864 20.6035 15.1194 20.5547 16.2256C20.5097 17.2494 20.3402 17.8051 20.1977 18.1764C20.0087 18.6669 19.7807 19.0164 19.414 19.3854C19.0472 19.7544 18.6977 19.9816 18.208 20.1729C17.8382 20.3169 17.2825 20.4894 16.2602 20.5381C15.1532 20.5899 14.821 20.6011 12.0175 20.6071C9.21396 20.6131 8.88171 20.6019 7.77471 20.5539ZM16.3345 6.38787C16.336 7.08387 16.9007 7.64712 17.5967 7.64562C18.2927 7.64412 18.856 7.07937 18.8545 6.38337C18.853 5.68737 18.2882 5.12412 17.5922 5.12562C16.8962 5.12712 16.3337 5.69187 16.3345 6.38787ZM6.60921 12.0099C6.61521 14.9874 9.03321 17.3964 12.0107 17.3904C14.9882 17.3844 17.398 14.9664 17.3927 11.9889C17.3867 9.01137 14.968 6.60162 11.9905 6.60762C9.01296 6.61362 6.60321 9.03237 6.60921 12.0099ZM8.50146 12.0061C8.49771 10.0734 10.0615 8.50287 11.995 8.49912C13.9277 8.49537 15.4982 10.0591 15.502 11.9926C15.5057 13.9254 13.942 15.4959 12.0085 15.4996C10.0757 15.5034 8.50521 13.9404 8.50146 12.0076" fill="currentColor"/>
@@ -58,12 +58,16 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="absolute top-[-1px] right-[-1px] size-[12px] border-t border-r border-[--primary] pointer-events-none"/>
-                <div className="absolute top-[-1px] left-[-1px] size-[12px] border-t border-l border-[--primary] pointer-events-none"/>
-                <div className="absolute bottom-[-1px] right-[-1px] size-[12px] border-b border-r border-[--primary] pointer-events-none"/>
-                <div className="absolute bottom-[-1px] left-[-1px] size-[12px] border-b border-l border-[--primary] pointer-events-none"/>
+                {props.theme === 'v1' && (
+                    <React.Fragment>
+                        <div className="hidden sm:block absolute top-[-1px] right-[-1px] size-[12px] border-t border-r border-[--primary] pointer-events-none"/>
+                        <div className="hidden sm:block absolute top-[-1px] left-[-1px] size-[12px] border-t border-l border-[--primary] pointer-events-none"/>
+                        <div className="hidden sm:block absolute bottom-[-1px] right-[-1px] size-[12px] border-b border-r border-[--primary] pointer-events-none"/>
+                        <div className="hidden sm:block absolute bottom-[-1px] left-[-1px] size-[12px] border-b border-l border-[--primary] pointer-events-none"/>
+                    </React.Fragment>
+                )}
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex sm:flex-row flex-col items-center justify-between gap-4">
                 <p className="text-sm text-[--white]">©2025 All Rights Reserved</p>
                 <div className="flex items-center gap-2">
                     <p className="text-sm text-[--white]">Designed & Developed by</p>

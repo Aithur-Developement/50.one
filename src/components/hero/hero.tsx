@@ -24,6 +24,18 @@ export default function Hero() {
 		if (lenis) {
 			lenis.on('scroll', ScrollTrigger.update);
 		}
+
+        gsap.to("#hero", {
+		    scrollTrigger: {
+		        trigger: ".hero-section",
+		        start: "top top",
+		        end: "center top",
+		        scrub: 1,
+		    },
+		    scale: 0.95,
+		    borderRadius: "60px",
+		    duration: 0.1,
+		});
     
         let textSplit, quoteSplit;
         const tl = gsap.timeline();

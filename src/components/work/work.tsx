@@ -6,6 +6,7 @@ import { SplitText } from "gsap/dist/SplitText";
 import { Button } from "@lib/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight , ChevronLeft } from 'lucide-react';
+import WorkDetail from "./work-detail";
 import './style.css';
 
 
@@ -86,7 +87,7 @@ export default function Work() {
 
         setPrevBtnDisabled(!emblaApi.canScrollPrev());
         setNextBtnDisabled(!emblaApi.canScrollNext());
-        setSelectedIndex(emblaApi.selectedScrollSnap());   // 👈 yeh line important
+        setSelectedIndex(emblaApi.selectedScrollSnap());
     }, [emblaApi]);
     const selectedItem = data[selectedIndex];
 
@@ -97,69 +98,102 @@ export default function Work() {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="w-screen xl:min-h-screen overflow-hidden" id="work" ref={sectionRef}>
-            <div className="w-full py-[14px] sm:py-[1.563vw] xl:py-[0.833vw] px-6 sm:px-[4.688vw] xl:px-[4.167vw] border-y border-[rgba(203,205,205,0.20)]">
-                <h2 className="text-2xl text-[--white]">
-                    Our Work
-                </h2>
-            </div>
-            <div className="relative w-full pb-[50px] sm:pb-[80px] xl:pb-[2.604vw]">
-                <div className="works w-full overflow-hidden ">
-                    <div className="works__viewport" ref={emblaRef}>
-                        <div className="works__container" ref={trackRef}>
-                            {data.map((item, index) => (
-                                <div className="works__slide" key={index}>
-                                    <div className="work-card">
-                                        <img src={item.imgSrc} className="w-full object-scale-down" alt="" />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="absolute inset-0 flex items-center pointer-events-none">
-                        <div className="w-[760px] sm:w-[74.219vw] xl:w-[47.24vw] mx-auto flex justify-between">
-                            <Button variant={'primary'} size={'sm_btn'} className="pointer-events-auto" onClick={onPrevButtonClick} disabled={prevBtnDisabled} >
-                                <ChevronLeft />
-                            </Button>
-                            <Button variant={'primary'} size={'sm_btn'} className="pointer-events-auto" onClick={onNextButtonClick} disabled={nextBtnDisabled} >
-                                <ChevronRight />
-                            </Button>
-                        </div>
-                    </div>
+        <>
+            <section className="w-screen xl:min-h-screen overflow-hidden" id="work" ref={sectionRef}>
+                <div className="w-full py-[14px] sm:py-[1.563vw] xl:py-[0.833vw] px-6 sm:px-[4.688vw] xl:px-[4.167vw] border-y border-[rgba(203,205,205,0.20)]">
+                    <h2 className="text-2xl text-[--white]">
+                        Our Work
+                    </h2>
                 </div>
-                <div className="relative z-30 w-[650px] sm:w-[63.477vw] xl:w-[41.406vw] mx-auto border-y border-[rgba(203,205,205,0.20)] ">
-                    <div className={`relative w-full h-fit p-6 sm:p-[2.344vw] xl:p-[1.25vw] flex flex-col gap-6 sm:gap-[2.344vw] xl:gap-[1.25vw] text-[--white] ${show ? 'zoom-in' : 'zoom-out'} `}>
-                        <div className="w-full flex items-start">
-                            <div className="w-full flex flex-col gap-3 sm:gap-[1.172vw] xl:gap-[0.625vw]">
-                                <h5 className="text-lg">{selectedItem.title}</h5>
-                                <p className="text-sm">
-                                    Location: {selectedItem.location}
+                <div className="relative w-full pb-[50px] sm:pb-[80px] xl:pb-[2.604vw]">
+                    <div className="works w-full overflow-hidden ">
+                        <div className="works__viewport" ref={emblaRef}>
+                            <div className="works__container" ref={trackRef}>
+                                {data.map((item, index) => (
+                                    <div className="works__slide" key={index}>
+                                        <div className="work-card">
+                                            <div className="card-image">
+                                                <img src={item.imgSrc} className="w-full object-scale-down" alt="" />
+                                            </div>
+                                            <div className="card-info text-[--white]">
+                                                <div className="w-full flex items-start">
+                                                    <div className="w-full flex flex-col gap-3 sm:gap-[1.172vw] xl:gap-[0.625vw]">
+                                                        <h5 className="text-lg">{selectedItem.title}</h5>
+                                                        <p className="text-sm">
+                                                            Location: {selectedItem.location}
+                                                        </p>
+                                                    </div>
+                                                    <span className="text-sm text-[--primary] shrink-0">{selectedItem.date}</span>
+                                                </div>
+                                                <div className="w-full min-h-[80px] sm:min-h-[7.813vw] xl:min-h-[4.167vw] flex items-end">
+                                                    <p className="text-sm line-clamp-3">
+                                                        {selectedItem.description}
+                                                    </p>
+                                                </div>
+                                                <button className="w-fit flex items-center gap-2 text-sm text-[--white] hover:text-[--primary] transition">
+                                                    <span className="underline underline-offset-2">View Detail</span>
+                                                    <ChevronRight className="size-[18px] text-[--primary]" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="absolute inset-0 hidden sm:flex items-center pointer-events-none">
+                            <div className="w-[760px] sm:w-[74.219vw] xl:w-[47.24vw] mx-auto flex justify-between">
+                                <Button variant={'primary'} size={'sm_btn'} className="pointer-events-auto" onClick={onPrevButtonClick} disabled={prevBtnDisabled} >
+                                    <ChevronLeft />
+                                </Button>
+                                <Button variant={'primary'} size={'sm_btn'} className="pointer-events-auto" onClick={onNextButtonClick} disabled={nextBtnDisabled} >
+                                    <ChevronRight />
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden sm:block relative z-30 w-[650px] sm:w-[63.477vw] xl:w-[41.406vw] mx-auto border-y border-[rgba(203,205,205,0.20)] ">
+                        <div className={`relative w-full h-fit p-6 sm:p-[2.344vw] xl:p-[1.25vw] flex flex-col gap-6 sm:gap-[2.344vw] xl:gap-[1.25vw] text-[--white] ${show ? 'zoom-in' : 'zoom-out'} `}>
+                            <div className="w-full flex items-start">
+                                <div className="w-full flex flex-col gap-3 sm:gap-[1.172vw] xl:gap-[0.625vw]">
+                                    <h5 className="text-lg">{selectedItem.title}</h5>
+                                    <p className="text-sm">
+                                        Location: {selectedItem.location}
+                                    </p>
+                                </div>
+                                <span className="text-sm text-[--primary] shrink-0">{selectedItem.date}</span>
+                            </div>
+                            <div className="w-full min-h-[80px] sm:min-h-[7.813vw] xl:min-h-[4.167vw] flex items-end">
+                                <p className="text-sm line-clamp-3">
+                                    {selectedItem.description}
                                 </p>
                             </div>
-                            <span className="text-sm text-[--primary] shrink-0">{selectedItem.date}</span>
+                            <button className="w-fit ms-auto flex items-center gap-2 text-sm text-[--white] hover:text-[--primary] transition">
+                                <span className="underline underline-offset-2">View Detail</span>
+                                <ChevronRight className="size-[18px] text-[--primary]" />
+                            </button>
+                            <div className="hidden sm:block absolute top-[-1px] right-[0] size-[12px] border-t border-r border-[--primary] pointer-events-none"/>
+                            <div className="hidden sm:block absolute top-[-1px] left-[0] size-[12px] border-t border-l border-[--primary] pointer-events-none"/>
+                            <div className="hidden sm:block absolute bottom-[-1px] right-[0] size-[12px] border-b border-r border-[--primary] pointer-events-none"/>
+                            <div className="hidden sm:block absolute bottom-[-1px] left-[0] size-[12px] border-b border-l border-[--primary] pointer-events-none"/>
                         </div>
-                        <div className="w-full min-h-[80px] sm:min-h-[7.813vw] xl:min-h-[4.167vw] flex items-end">
-                            <p className="text-sm line-clamp-3">
-                                {selectedItem.description}
-                            </p>
-                        </div>
-                        <button className="w-fit ms-auto flex items-center gap-2 text-sm text-[--white] hover:text-[--primary] transition">
-                            <span className="underline underline-offset-2">View Detail</span>
-                            <ChevronRight className="size-[18px] text-[--primary]" />
-                        </button>
-                        <div className="absolute top-[-1px] right-[0] size-[12px] border-t border-r border-[--primary] pointer-events-none"/>
-                        <div className="absolute top-[-1px] left-[0] size-[12px] border-t border-l border-[--primary] pointer-events-none"/>
-                        <div className="absolute bottom-[-1px] right-[0] size-[12px] border-b border-r border-[--primary] pointer-events-none"/>
-                        <div className="absolute bottom-[-1px] left-[0] size-[12px] border-b border-l border-[--primary] pointer-events-none"/>
+                    </div>
+                    <div className="hidden sm:block absolute z-20 top-0 left-[calc(calc(100%-650px)/2)] sm:left-[calc(calc(100%-63.477vw)/2)] xl:left-[calc(calc(100%-41.406vw)/2)] w-[650px] sm:w-[63.477vw] xl:w-[41.406vw] h-full border-x border-[rgba(203,205,205,0.20)] pointer-events-none" >
+                        <div className="w-[36px] border-t border-[--primary] ml-[-18px] mt-[-1px]"/>
+                        <div className="ms-auto w-[36px] border-t border-[--primary] mr-[-18px] mt-[-1px]"/>
+                        <div className="h-[18px] inline-block border-l border-[--primary] ml-[-1px]"/>
+                        <div className="float-right h-[18px] border-l border-[--primary] mr-[-1px]"/>
                     </div>
                 </div>
-                <div className="absolute z-20 top-0 left-[calc(calc(100%-650px)/2)] sm:left-[calc(calc(100%-63.477vw)/2)] xl:left-[calc(calc(100%-41.406vw)/2)] w-[650px] sm:w-[63.477vw] xl:w-[41.406vw] h-full border-x border-[rgba(203,205,205,0.20)] pointer-events-none" >
-                    <div className="w-[36px] border-t border-[--primary] ml-[-18px] mt-[-1px]"/>
-                    <div className="ms-auto w-[36px] border-t border-[--primary] mr-[-18px] mt-[-1px]"/>
-                    <div className="h-[18px] inline-block border-l border-[--primary] ml-[-1px]"/>
-                    <div className="float-right h-[18px] border-l border-[--primary] mr-[-1px]"/>
+                <div className="sm:hidden flex items-end justify-end gap-6 pb-[50px] px-6">
+                    <Button variant={'primary'} size={'sm_btn'} onClick={onPrevButtonClick} disabled={prevBtnDisabled} >
+                        <ChevronLeft />
+                    </Button>
+                    <Button variant={'primary'} size={'sm_btn'} onClick={onNextButtonClick} disabled={nextBtnDisabled} >
+                        <ChevronRight />
+                    </Button>
                 </div>
-            </div>
-        </section>
+            </section>
+            {/* <WorkDetail /> */}
+        </>
     );
 }
