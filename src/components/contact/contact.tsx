@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { SplitText } from "gsap/dist/SplitText";
@@ -12,6 +12,44 @@ export default function Contact() {
     const textRef = useRef(null);
     const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1150;
     const lenis = isDesktop ? useLenis() : null;
+    const [error, setError] = useState(false);
+    const [result, setResult] = useState("");
+    const [formData , setFormData] = useState({
+        fullName: '',
+        email: '',
+        message: '',
+        access_key: "08a30d07-19d6-4eaa-8f2e-d8fdea65344d"
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        const updatedData = {
+            ...formData,
+            [name]: value,
+        };
+        setFormData(updatedData);
+    };
+
+     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (!formData.fullName || !formData.email || !formData.message) {
+            setError(true);
+            return;
+        }
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+        // console.log("Response Data:", data);
+        // setResult(data.success);
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+        }
+    };
 
     useEffect(() => {
         if (!textRef.current ) return;
@@ -53,17 +91,47 @@ export default function Contact() {
                 <div className="grid grid-cols-12 items-stretch xl:border-x border-[rgba(203,205,205,0.20)]">
                     <div className="col-span-12 xl:col-span-6 p-6 sm:p-[4.688vw] xl:p-[2.5vw] flex flex-col gap-6 sm:gap-8 xl:gap-[2.5vw] justify-between border-b xl:border-none border-[rgba(203,205,205,0.20)]">
                         <h3 className="text-base text-[--white]">Start a Conversation</h3>
-                        <div className="w-full h-fit flex flex-col justify-between gap-6 xl:gap-[3.125vw]">
-                            <div className="flex flex-col gap-6 xl:gap-[1.875vw]">
-                                <input type="text" name="full-name" placeholder="Full Name" className="w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b border-[--white] outline-none" />
-                                <input type="email" name="email" placeholder="Email" className="w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b border-[--white] outline-none" />
-                                <input type="text" name="message" placeholder="Message" className="w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b border-[--white] outline-none" />
+                        {result === ''?(
+                            <form onSubmit={onSubmit} className="w-full h-fit flex flex-col justify-between gap-6 xl:gap-[3.125vw]">
+                                <div className="flex flex-col gap-6 xl:gap-[1.875vw]">
+                                    <input 
+                                        type="text" 
+                                        name="fullName" 
+                                        value={formData.fullName} 
+                                        onChange={handleChange} 
+                                        placeholder="Full Name"
+                                        required
+                                        className={`w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b ${error ? formData.fullName === '' ? 'border-[--primary]' : 'border-[--white]':'border-[--white]'} transition outline-none`} 
+                                    />
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        value={formData.email} 
+                                        onChange={handleChange} 
+                                        placeholder="Email" 
+                                        required
+                                        className={`w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b ${error ? formData.email === '' ? 'border-[--primary]' : 'border-[--white]':'border-[--white]'} transition outline-none`} 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        name="message" 
+                                        value={formData.message} 
+                                        onChange={handleChange} 
+                                        placeholder="Message" 
+                                        required
+                                        className={`w-full py-4 pr-6 text-md bg-transparent placeholder-[--white] text-[--white] border-b ${error ? formData.message === '' ? 'border-[--primary]' : 'border-[--white]':'border-[--white]'} transition outline-none`} 
+                                    />
+                                </div>
+                                <Button variant={'light'} size={'large'} className="w-full" type="submit" >
+                                Send Message
+                                    <Send className="size-[18px] text-[--primary]" />
+                                </Button>
+                            </form>
+                        ):(
+                            <div className="w-full h-full flex items-center justify-center">
+                                <h4 className="text-2xl text-center text-[--white]">{result}</h4>
                             </div>
-                            <Button variant={'light'} size={'large'} className="w-full">
-                               Send Message
-                                <Send className="size-[18px] text-[--primary]" />
-                            </Button>
-                        </div>
+                        )}
                     </div>
                     <div className="col-span-12 xl:col-span-6 flex flex-col xl:border-l border-[rgba(203,205,205,0.20)]">
                         <div className="w-full flex sm:flex-row flex-col items-stretch border-b border-[rgba(203,205,205,0.20)]">
