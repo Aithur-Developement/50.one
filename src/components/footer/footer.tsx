@@ -33,15 +33,23 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                     <p className="text-sm text-[--white]">Lorem ipsum dolor sit amet consectetur. Pulvinar potenti neque metus in leo massa. Pellentesque tristique maecenas amet tellus eu elit elit leo. </p>
                 </div>
                 <div className="w-full sm:w-[200px] xl:w-full sm:shrink-0 xl:shrink p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col xl:items-start items-center gap-4 border-b sm:border-r border-[rgba(203,205,205,0.20)]">
-                    <button onClick={() => handleNav('#hero')} className="text-md text-[--white] hover:text-[--primary] transition">
-                        Home
-                    </button>
-                    <button onClick={() => handleNav('#about')} className="text-md text-[--white] hover:text-[--primary] transition">
-                        About Us
-                    </button>
-                    <button onClick={() => handleNav('#work')} className="text-md text-[--white] hover:text-[--primary] transition">
-                        Projects
-                    </button>
+                    {props.theme === 'v1'?(
+                        <React.Fragment>
+                            <button onClick={() => handleNav('#hero')} className="text-md text-[--white] hover:text-[--primary] transition">
+                                Home
+                            </button>
+                            <button onClick={() => handleNav('#about')} className="text-md text-[--white] hover:text-[--primary] transition">
+                                About Us
+                            </button>
+                            <button onClick={() => handleNav('#work')} className="text-md text-[--white] hover:text-[--primary] transition">
+                                Projects
+                            </button>
+                        </React.Fragment>
+                    ):(
+                        <a href="/" className="text-md text-[--white] hover:text-[--primary] transition">
+                            Home
+                        </a>
+                    )}
                     <a href="/contact-us" className="text-md text-[--white] hover:text-[--primary] transition">
                         Contact Us
                     </a>
