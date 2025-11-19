@@ -2,16 +2,26 @@ import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { SplitText } from "gsap/dist/SplitText";
+import $ from 'jquery';
 
 
 
 
 export default function Footer(props: {theme?: 'v1' | 'v2'}) {
     const sectionRef = useRef(null);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText);
-        
     }, []);
+
+    const handleNav = (id) => {
+        const $el = $(id);
+        const offset = $el.offset();
+        if (offset) {
+            const top = offset.top;
+            $('html, body').animate({ scrollTop: top }, 800);
+        }
+    }
 
     return (
         <footer className={`w-full flex flex-col gap-4 overflow-hidden ${props.theme === 'v1'? 'sm:px-[34px] xl:px-[2.5vw]' : 'sm:px-[4.688vw] xl:px-[4.167vw]'} pb-4 sm:pb-[24px] xl:pb-[2.5vw]`} id="footer" ref={sectionRef}>
@@ -23,18 +33,18 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                     <p className="text-sm text-[--white]">Lorem ipsum dolor sit amet consectetur. Pulvinar potenti neque metus in leo massa. Pellentesque tristique maecenas amet tellus eu elit elit leo. </p>
                 </div>
                 <div className="w-full sm:w-[200px] xl:w-full sm:shrink-0 xl:shrink p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col xl:items-start items-center gap-4 border-b sm:border-r border-[rgba(203,205,205,0.20)]">
-                    <button className="text-md text-[--white] hover:text-[--primary] transition">
+                    <button onClick={() => handleNav('#hero')} className="text-md text-[--white] hover:text-[--primary] transition">
                         Home
                     </button>
-                    <button className="text-md text-[--white] hover:text-[--primary] transition">
+                    <button onClick={() => handleNav('#about')} className="text-md text-[--white] hover:text-[--primary] transition">
                         About Us
                     </button>
-                    <button className="text-md text-[--white] hover:text-[--primary] transition">
+                    <button onClick={() => handleNav('#work')} className="text-md text-[--white] hover:text-[--primary] transition">
                         Projects
                     </button>
-                    <button className="text-md text-[--white] hover:text-[--primary] transition">
+                    <a href="/contact-us" className="text-md text-[--white] hover:text-[--primary] transition">
                         Contact Us
-                    </button>
+                    </a>
                 </div>
                 <div className="w-full flex flex-col">
                     <div className="w-full h-full flex items-center justify-center p-6 gap-6 xl:gap-[1.667vw] border-b border-[rgba(203,205,205,0.20)]">
@@ -73,7 +83,7 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                     <p className="text-sm text-[--white]">Designed & Developed by</p>
                     <a href="" className="text-[--white] hover:text-[--primary] transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="69" height="18" viewBox="0 0 69 18" fill="none">
-                            <g clip-path="url(#clip0_12910_272)">
+                            <g clipPath="url(#clip0_12910_272)">
                                 <path d="M7.12699 18.0002C5.5331 17.9982 4.25017 16.7085 4.25538 15.1135C4.26058 13.5264 5.54481 12.2406 7.12699 12.2373C8.71894 12.2347 10.0149 13.5382 10.0077 15.1363C10.0006 16.7234 8.71438 18.0021 7.12699 18.0002Z" fill="currentColor"/>
                                 <path d="M22.2495 15.7186C21.8591 15.849 19.9725 16.1751 18.8015 14.5449C17.4919 12.7224 16.209 7.80333 15.939 5.9378C15.8232 5.13968 14.6378 0.199705 10.0188 0.00408779C6.24547 -0.126323 5.15381 3.33022 5.15381 3.33022C5.15381 3.33022 3.96197 7.21322 2.66734 8.2852C1.17103 9.5241 0 8.93725 0 8.93725C0 8.93725 3.31791 12.0671 6.24547 10.5674C9.17304 9.06766 10.0838 6.003 10.0838 6.003C10.0838 6.003 11.0122 10.8543 11.7512 12.5366C12.0674 13.2558 13.2716 17.3488 16.5245 17.8052C19.7773 18.2616 22.2495 15.7186 22.2495 15.7186Z" fill="currentColor"/>
                                 <rect x="19.7632" y="2.60059" width="2.87695" height="12.5796" rx="1.43848" fill="currentColor"/>

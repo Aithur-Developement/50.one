@@ -25,8 +25,10 @@ export default function Footer_banner() {
                     <div className="w-[calc(100%-calc(42px*2))] sm:w-[calc(100%-calc(84px*2))] xl:w-[calc(100%-calc(5.313vw*2))] h-[calc(100%-calc(32px*2))] sm:h-[calc(100%-calc(70px*2))] xl:h-[calc(100%-calc(5.729vw*2))] rotate-[45deg] border-[2px] border-[rgba(203,205,205,0.20)]">
                         <div className="size-full flex flex-col items-center justify-center text-center gap-4 sm:gap-[36px] xl:gap-[2.5vw] -rotate-[90deg]">
                             <h3 className="text-1xl text-[--white]">Let’s Create together</h3>
-                            <Button variant={'primary'} size={'large'}>
-                                Contact Us
+                            <Button variant={'primary'} size={'large'} asChild>
+                                 <a href="/contact-us">
+                                    Contact Us
+                                </a>    
                             </Button>
                         </div>
                     </div>

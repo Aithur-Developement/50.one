@@ -17,9 +17,9 @@ export default function Hero() {
     useEffect(() => {
         if (!textRef.current || !quoteRef.current) return;
         gsap.registerPlugin(ScrollTrigger,SplitText);
-        if(window.innerWidth  > 1150){
-            ScrollTrigger.normalizeScroll(true);
-        }
+        // if(window.innerWidth  > 1150){
+        //     ScrollTrigger.normalizeScroll(true);
+        // }
 
 		if (lenis) {
 			lenis.on('scroll', ScrollTrigger.update);
@@ -74,7 +74,7 @@ export default function Hero() {
                     Spaces for People. Places for Life.
                 </h1>
                 <p ref={quoteRef} className="relative z-10 text-md opacity-0">
-                    At 50one, we turn imagination into form and complexity into clarity creating architecture that inspires and endures. Every project begins with exploration and ideas that, through collaboration, evolve into one clear and timeless vision rooted in its context.
+                    At 50.one, we turn imagination into form and complexity into clarity creating architecture that inspires and endures. Every project begins with exploration and ideas that, through collaboration, evolve into one clear and timeless vision rooted in its context.
                 </p>
             </div>
         </section>

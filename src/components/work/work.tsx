@@ -9,6 +9,14 @@ import { ChevronRight , ChevronLeft } from 'lucide-react';
 import WorkDetail from "./work-detail";
 import './style.css';
 
+declare global {
+  interface Window {
+    lenis?: {
+      stop: () => void;
+      start: () => void;
+    };
+  }
+}
 
 
 export default function Work() {
@@ -19,6 +27,26 @@ export default function Work() {
     const [show, setShow] = useState(true);
     const [emblaRef, emblaApi] = useEmblaCarousel({loop: true,dragFree: false});
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        // const lenis = window.lenis;
+        // if (!lenis) return;
+    
+        if (isOpen) {
+            // lenis.stop();
+            document.body.style.overflow = 'hidden';
+            // if(window.innerWidth  > 1150){
+            //     ScrollTrigger.normalizeScroll(false);
+            // }
+        } else {
+            // if(window.innerWidth  > 1150){
+            //     ScrollTrigger.normalizeScroll(true);
+            // }
+            // lenis.start();
+            document.body.style.overflow = '';
+        }
+    }, [isOpen]);
 
     const data = [
         {
@@ -110,7 +138,7 @@ export default function Work() {
                         <div className="works__viewport" ref={emblaRef}>
                             <div className="works__container" ref={trackRef}>
                                 {data.map((item, index) => (
-                                    <div className="works__slide" key={index}>
+                                    <div onClick={()=> setIsOpen(true)} className="works__slide" key={index}>
                                         <div className="work-card">
                                             <div className="card-image">
                                                 <img src={item.imgSrc} className="w-full object-scale-down" alt="" />
@@ -167,7 +195,7 @@ export default function Work() {
                                     {selectedItem.description}
                                 </p>
                             </div>
-                            <button className="w-fit ms-auto flex items-center gap-2 text-sm text-[--white] hover:text-[--primary] transition">
+                            <button onClick={()=> setIsOpen(true)} className="w-fit ms-auto flex items-center gap-2 text-sm text-[--white] hover:text-[--primary] transition">
                                 <span className="underline underline-offset-2">View Detail</span>
                                 <ChevronRight className="size-[18px] text-[--primary]" />
                             </button>
@@ -193,7 +221,7 @@ export default function Work() {
                     </Button>
                 </div>
             </section>
-            {/* <WorkDetail /> */}
+            <WorkDetail isOpen={isOpen} setIsOpen={setIsOpen} data={selectedItem} />
         </>
     );
 }
