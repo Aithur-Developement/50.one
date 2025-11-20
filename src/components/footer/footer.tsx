@@ -30,7 +30,9 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                     <a href="/">
                         <img src="./footer-logo.png" className="w-[150px] sm:w-[250px] object-scale-down " alt="footer-logo" />
                     </a>
-                    <p className="sm:w-[70%] xl:w-full mx-auto text-sm text-[--white]">Lorem ipsum dolor sit amet consectetur. Pulvinar potenti neque metus in leo massa. Pellentesque tristique maecenas amet tellus eu elit elit leo. </p>
+                    <p className="sm:w-[70%] xl:w-full mx-auto text-sm text-[--white]">
+                        We create meaningful spaces through thoughtful design, clarity, and modern architectural vision crafted for people and built to last.
+                    </p>
                 </div>
                 <div className="w-full xl:w-[300px] sm:shrink-0 p-6 xl:py-[2.5vw] xl:px-[2.5vw] flex flex-col items-center gap-4 border-b xl:border-r border-[rgba(203,205,205,0.20)]">
                     {props.theme === 'v1'?(
