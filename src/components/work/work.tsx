@@ -51,44 +51,103 @@ export default function Work() {
     const data = [
         {
             imgSrc: "./work/1.jpg",
-            title: "Harbour Residence",
-            location: "Sydney, Australia",
-            date: "Jan 12, 2024",
+            title: "Waterfront Residence",
+            location: "Russell Lea, Sydney",
+            date: "Nov 2014",
             description:
-            "A modern residential space blending natural textures with contemporary architecture. Large open layouts and soft lighting create a calm and immersive living experience."
+            "•A waterfront residential development oriented toward a public park and Sydney Harbour, maximising outlook, amenity, and a strong connection to landscape and harbour front living.",
+            content: `
+                <p class="text-md">The residence occupies two narrow lots arranged in tandem, addressing two street frontages. The longitudinal planning strategy originally relied on extended circulation corridors. To improve spatial efficiency, ancillary services were integrated within primary living spaces through operable wall systems, enabling flexible use and reducing reliance on corridors.
+                    The elongated building envelope introduced complexity to the external elevations. Visual impact was moderated through articulated indentations, varied materiality, and a restrained colour palette. Privacy along the length of the building was addressed using operable screening devices. High-performance thermal insulation systems were incorporated to offset energy impacts associated with large, glazed openings, while maximising daylight penetration to internal spaces, a key consideration for occupant wellbeing.
+                </p>
+            `,
+            images: [
+                "/work/residence/01.jpg",
+                "/work/residence/02.jpg",
+            ]
         },
         {
             imgSrc: "./work/2.jpg",
-            title: "Skyline Tower",
-            location: "Melbourne, Australia",
-            date: "Feb 25, 2024",
+            title: "Skyline Hotel + Apartment Redevelopment",
+            location: "CBD, Brisbane",
+            date: "Nov 2015",
             description:
-            "A high-rise commercial building designed with clean geometry and sustainable materials. The structure features panoramic glass surfaces and efficient internal circulation."
+            "An 80-storey high-rise mixed-use building incorporating commercial and residential uses, designed with a strong geometric architectural expression and sustainable material systems. The building features high-performance glazed and metallic façades that provide panoramic outlooks while optimising environmental performance.",
+            content: `
+                <p class="text-md">
+                    The Brisbane proposal was a concept development involving the consolidation of three CBD sites near the Brisbane River. The scheme comprised a hotel within the lower levels, with residential apartments above. The upper levels were designed to capture panoramic views of the Brisbane skyline and distant coastal horizons.
+                </p>
+                <p class="text-md">
+                    The façade composition, expressed through irregularly arranged glass and polished metal elements, was intentionally conceived to create an organic visual character that evolved over a 24-hour cycle. At night, the glazed components were envisioned to emit subtle shifts in colour and light, reinforcing the design intent of an organic, sculptural edifice.
+                </p>
+            `,
+            images: [
+                "/work/hotel/01.jpg",
+                "/work/hotel/02.jpg",
+            ]
         },
         {
             imgSrc: "./work/3.jpg",
-            title: "The Minimalist Home",
-            location: "Brisbane, Australia",
-            date: "Mar 18, 2024",
+            title: "Urban Residential Development",
+            location: "Leppington, Sydney",
+            date: "Oct 2014",
             description:
-            "Inspired by minimalism, this project emphasizes open spaces, natural daylight, and warm neutral tones. Every corner is designed to support a balanced, clutter-free lifestyle."
+            "Concept proposal for a high-density residential development over 4.3 hectares of existing farmland, rezoned for residential use.",
+            content: `
+                <p class="text-md">
+                    Concept proposal for a high-density residential development on a 4.3-hectare site formerly used for agricultural purposes and rezoned for residential use. The proposal investigates land-use yield, built-form controls, staging, public and private open-space provision, movement networks, and supporting infrastructure to enable an orderly and efficient transition to an urban residential environment.
+                </p>
+                <p class="text-md">
+                    The central tower buildings are conceived with full-height glazed façades incorporating photovoltaic (PV) glass technology. This approach integrates on-site renewable energy generation, enhanced thermal performance, and façade articulation, contributing to reduced operational energy demand, lower carbon footprint, and improved environmental sustainability outcomes.
+                </p>
+            `,
+            images: [
+                "/work/urban/01.jpg",
+                "/work/urban/02.jpg",
+            ]
         },
         {
             imgSrc: "./work/4.jpg",
-            title: "Urban Living Complex",
-            location: "Perth, Australia",
-            date: "Apr 05, 2024",
+            title: "Terrace Refurbishment",
+            location: "Darlinghurst, Sydney",
+            date: "Nov 2024",
             description:
-            "A thoughtfully designed urban complex integrating living, recreation, and community spaces. The project stands out through its bold form and functional layout."
+            "The original street façade is reinstated to reflect the past, while the spaces behind are collaboratively designed to meet the clients’ contemporary aspirations.",
+            content: `
+                <p class="text-md">External Works:</p>
+                <p class="text-md">The front façade was reinstated to its original form and detailing, preserving the heritage character and streetscape. The existing building envelope was retained and reconfigured to include an attic, increasing usable internal area.</p>
+                <p class="text-md">New ground-level outdoor spaces and a private rooftop terrace provide sun-filled outdoor amenity and strengthen the connection between internal and external spaces.</p>
+                <br/>
+                <p class="text-md">Internal Works:</p>
+                <p class="text-md">The interior was fully refurbished to meet contemporary living requirements, introducing open, flexible spaces with improved access to daylight and sunlight, enhancing overall amenity.</p>
+            `,
+            images: [
+                "/work/terrace/01.jpg",
+                "/work/terrace/02.jpg",
+                "/work/terrace/03.jpg",
+                "/work/terrace/04.jpg",
+                "/work/terrace/05.jpg",
+            ]
         },
         {
             imgSrc: "./work/5.jpg",
-            title: "Coastal Modern Villa",
-            location: "Gold Coast, Australia",
-            date: "May 20, 2024",
+            title: "Integrated Industrial Food Facility",
+            location: "Auburn, Sydney",
+            date: "Nov 1999",
             description:
-            "A luxury villa with a seamless connection between indoor and outdoor areas. Natural wood, stone, and open airflow create a refreshing coastal atmosphere."
-        }
+            "A complex food manufacturing facility incorporating controlled inventory systems, value-added processing lines, and integrated logistics and distribution operations.",
+            content: `
+                <p class="text-md">The evolution of the complex was driven by the spatial and operational requirements of the manufacturing process, including statutory and regulatory compliance. The overall composition integrates each stage of production into a coherent workflow, directly informing the final built form.
+                    External wall cladding was selected for its antimicrobial properties to minimise the potential growth of bacteria, fungi, and viruses. An aluminium cladding system was adopted to reflect the sensitivity and precision of the facility’s function while providing durability and ease of maintenance. Long-term maintenance considerations were a fundamental design driver.
+                    Sustainability principles were integrated throughout the design, supporting operational efficiency, material longevity, and reduced lifecycle impact.
+                </p>
+            `,
+            images: [
+                "/work/industrial/01.jpg",
+                "/work/industrial/02.jpg",
+                "/work/industrial/03.jpg",
+            ]
+        },
     ];
 
 

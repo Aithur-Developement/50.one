@@ -21,32 +21,32 @@ export default function Services() {
         {
             imgSrc: "/services/1.jpg",
             title: "Residential Design",
-            description: "Custom homes and extensions that respond to your lifestyle and landscape.",
+            description: "Individually designed homes and extensions that respond to your lifestyle and site context.",
         },
         {
             imgSrc: "/services/2.jpg",
             title: "Commercial Design",
-            description: "Smart, functional spaces that enhance business identity and productivity.",
+            description: "Purpose-driven spaces that enhance brand identity and workplace productivity.",
         },
         {
             imgSrc: "/services/3.jpg",
             title: "Industrial Design",
-            description: "Robust and efficient facilities tailored for performance and compliance.",
+            description: "High-performance facilities engineered for efficiency, durability, and compliance.",
         },
         {
             imgSrc: "/services/4.jpg",
             title: "Renovation  and Restoration",
-            description: "Custom homes and extensions that respond to your lifestyle and landscape.",
+            description: "Integrating architectural principles and client aspirations while responding to site context.",
         },
         {
             imgSrc: "/services/5.jpg",
             title: "Urban consolidation and infusion",
-            description: "Custom homes and extensions that respond to your lifestyle and landscape.",
+            description: "A systematic examination of physical locations to ",
         },
         {
             imgSrc: "/services/6.jpg",
             title: "Virtual Architecture",
-            description: "Custom homes and extensions that respond to your lifestyle and landscape.",
+            description: "Artificial intelligence and algorithmic systems applied to the accelerated generation, enhancement, and autonomous production of visual content, including photorealistic animations and high-fidelity three-dimensional models, through computational design, generative modelling, and simulation-based workflows.",
         },
         {
             imgSrc: "/services/7.jpg",

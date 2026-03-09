@@ -6,7 +6,6 @@ import "./style.css";
 
 export default function projects(props) {
 
-    
     return (
         <div className={`fixed top-0 left-0 w-screen h-screen flex justify-center items-center z-[500] bg-[#00000078] backdrop-blur-[10px] transition 
             ${props.isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`
@@ -23,21 +22,24 @@ export default function projects(props) {
                 <div className="w-full h-full sm:h-fit flex xl:flex-row flex-col sm:items-stretch items-start xl:pr-0 pr-2 xl:overflow-hidden overflow-auto line-scroll" data-lenis-prevent>
                     <div className="xl:order-1 order-2 w-full h-fit flex p-4 sm:p-6 xl:p-[1.25vw]">
                         <div className="w-full h-fit sm:h-[63.477vw] xl:h-[31.25vw] 1xl:h-[38.542vw] flex-col xl:pr-[1.25vw] sm:pr-[2.344vw] pr-0 sm:overflow-auto line-scroll" data-lenis-prevent>
-                            <div className="w-full 
-                            ">
-                                {/* border-b border-[rgba(203,205,205,0.20)] pb-6 xl:pb-[1.25vw] mb-6 xl:mb-[1.25vw] */}
-                                <img src={props.data?.imgSrc} className="w-full object-cover" alt="" />
-                            </div>
+                            {props.data?.images.map((image, index) => (
+                                <React.Fragment key={index}>
+                                    <img src={image} className="w-full object-cover" alt="" />
+                                    {index !== props.data?.images.length - 1 &&(
+                                        <div className="w-full border-b border-[rgba(203,205,205,0.20)] pb-6 xl:pb-[1.25vw] mb-6 xl:mb-[1.25vw]"/>
+                                    )}
+                                </React.Fragment>
+                            ))}
                         </div>
                     </div>
-                    <div className="xl:order-2 order-1 w-full h-fit sm:h-[39.063vw] xl:h-auto xl:w-[28.75vw] p-4 sm:p-6 xl:p-[1.25vw] flex flex-col gap-[48px] xl:gap-[2.5vw] shrink-0 border-b xl:border-l border-[rgba(203,205,205,0.20)] sm:overflow-auto line-scroll" data-lenis-prevent>
-                        <div className="w-full flex items-center justify-between gap-6 xl:gap-[1.25vw]">
-                            <h6 className="text-md text-[--white]">Location: {props.data?.location}</h6>
-                            <span className="text-md text-[--primary]">{props.data?.date}</span>
+                    <div className="xl:order-2 order-1 w-full h-fit sm:h-[39.063vw] xl:h-auto xl:w-[28.75vw] p-4 sm:p-6 xl:p-[1.25vw] shrink-0 border-b xl:border-l border-[rgba(203,205,205,0.20)] ">
+                        <div className="w-full h-fit sm:h-[63.477vw] xl:h-[31.25vw] 1xl:h-[38.542vw] flex flex-col gap-[48px] xl:gap-[2.5vw] sm:overflow-auto line-scroll" data-lenis-prevent>
+                            <div className="w-full flex items-center justify-between gap-6 xl:gap-[1.25vw]">
+                                <h6 className="text-md text-[--white]">Location: {props.data?.location}</h6>
+                                <span className="text-md text-[--primary]">{props.data?.date}</span>
+                            </div>
+                            <div className=" text-[--white]" dangerouslySetInnerHTML={{ __html: props.data?.content }} />
                         </div>
-                        <p className="text-md text-[--white]">
-                            {props.data?.description}
-                        </p>
                     </div>
                 </div>
             </div>

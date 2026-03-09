@@ -1,8 +1,8 @@
 import * as React from "react"
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { SplitText } from "gsap/dist/SplitText";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { SplitText } from "gsap/dist/SplitText";
 
 export default function About() {
     const sectionRef = useRef(null);
@@ -57,7 +57,7 @@ export default function About() {
                     </div>
                     <div className="w-full flex flex-col gap-[36px] xl:gap-[4.167vw] text-[--white]">
                         <div className="flex flex-col gap-[36px] xl:gap-[1.875vw]">
-                            <h3 className="text-xl">About Company</h3>
+                            <h3 className="text-base">About Company</h3>
                             <p className="text-md">We believe great architecture emerges from balance between creativity and precision, emotion and logic, possibility and clarity. We work closely with our clients and collaborators to translate their aspirations into built form creating designs that endure and inspire.</p>
                         </div>
                         <div className="flex flex-col gap-[36px] xl:gap-[1.875vw]">

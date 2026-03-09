@@ -73,7 +73,7 @@ export default function Hero() {
                 <h1 ref={textRef} className="relative z-10 text-3xl opacity-0">
                     Spaces for People. Places for Life.
                 </h1>
-                <p ref={quoteRef} className="relative z-10 text-md opacity-0">
+                <p ref={quoteRef} className="relative z-10 text-md !font-poppins opacity-0">
                     At 50.one, we turn imagination into form and complexity into clarity creating architecture that inspires and endures. Every project begins with exploration and ideas that, through collaboration, evolve into one clear and timeless vision rooted in its context.
                 </p>
             </div>
