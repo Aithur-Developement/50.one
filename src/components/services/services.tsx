@@ -41,18 +41,18 @@ export default function Services() {
         {
             imgSrc: "/services/5.jpg",
             title: "Urban consolidation and infusion",
-            description: "A systematic examination of physical locations to ",
+            description: "A systematic examination of physical sites to identify constraints, assess existing infrastructure, and develop sustainable solutions that address social needs.",
         },
         {
             imgSrc: "/services/6.jpg",
             title: "Virtual Architecture",
             description: "Artificial intelligence and algorithmic systems applied to the accelerated generation, enhancement, and autonomous production of visual content, including photorealistic animations and high-fidelity three-dimensional models, through computational design, generative modelling, and simulation-based workflows.",
         },
-        {
-            imgSrc: "/services/7.jpg",
-            title: "3D Rendering",
-            description: "Custom homes and extensions that respond to your lifestyle and landscape.",
-        },
+        // {
+        //     imgSrc: "/services/7.jpg",
+        //     title: "3D Rendering",
+        //     description: "Custom homes and extensions that respond to your lifestyle and landscape.",
+        // },
     ]
 
     useEffect(() => {
@@ -103,13 +103,13 @@ export default function Services() {
             tl.to(listRef.current[5], {y: -((card_height*5) + (60*5)),duration: 1,ease: "power2.inOut",},'<');
             tl.to(listRef.current[6], {y: -((card_height*5) + (60*5)),duration: 1,ease: "power2.inOut",},'<');
 
-            tl.to(listRef.current[5], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'step6');
-            tl.to(listRef.current[1], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'step6');
-            tl.to(listRef.current[0], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
-            tl.to(listRef.current[2], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
-            tl.to(listRef.current[3], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
-            tl.to(listRef.current[4], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
-            tl.to(listRef.current[6], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
+            // tl.to(listRef.current[5], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'step6');
+            // tl.to(listRef.current[1], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'step6');
+            // tl.to(listRef.current[0], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
+            // tl.to(listRef.current[2], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
+            // tl.to(listRef.current[3], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
+            // tl.to(listRef.current[4], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
+            // tl.to(listRef.current[6], {y: -((card_height*6) + (60*6)),duration: 1,ease: "power2.inOut",},'<');
 
     
             ScrollTrigger.create({
@@ -168,8 +168,8 @@ export default function Services() {
                                 id={`card-${index + 1}`}
                                 className="flex items-start gap-6 xl:gap-[1.25vw]" 
                             >
-                                <span className="w-[145px] xl:w-[7.552vw] text-3xl text-[--primary]">0{index + 1}</span>
-                                <div className="w-[500px] xl:w-[26.042vw] flex flex-col gap-6 xl:gap-[1.25vw] p-6 xl:gap-[1.25vw] bg-[--dark] text-[--white]">
+                                <span className="w-[145px] xl:w-[7.552vw] text-3xl !font-poppins text-[--primary]">0{index + 1}</span>
+                                <div className="w-[500px] xl:w-[26.042vw] flex flex-col gap-6 p-6 xl:gap-[1.25vw] bg-[--dark] text-[--white]">
                                     <img src={service.imgSrc} className="w-full object-scale-down" alt="" />
                                     <div className="w-full flex flex-col gap-2">
                                         <h3 className="text-xl !font-poppins">{service.title}</h3>
