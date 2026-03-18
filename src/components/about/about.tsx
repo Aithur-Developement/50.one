@@ -46,8 +46,8 @@ export default function About() {
     // }, []);
 
     return (
-        <section className="w-screen min-h-screen pt-[60px] xl:pt-[7.708vw] overflow-hidden" id="about" ref={sectionRef}>
-            <div className="w-full py-[14px] sm:py-[1.563vw] xl:py-[0.833vw] px-6 sm:px-[4.688vw] xl:px-[4.167vw] border-y border-[rgba(203,205,205,0.20)]">
+        <section className="w-screen min-h-screen pt-[60px] xl:pt-[7.708vw] overflow-hidden"  ref={sectionRef}>
+            <div id="about" className="w-full py-[14px] sm:py-[1.563vw] xl:py-[0.833vw] px-6 sm:px-[4.688vw] xl:px-[4.167vw] border-y border-[rgba(203,205,205,0.20)]">
                 <h2 className="text-2xl text-[--white]">About Us</h2>
             </div>
             <div className="size-full px-6 sm:px-[4.688vw] xl:px-[4.167vw] py-[52px] sm:py-[98px] xl:py-[6.302vw]">

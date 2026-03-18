@@ -55,7 +55,7 @@ export default function Work() {
             location: "Russell Lea, Sydney",
             date: "Nov 2014",
             description:
-            "•A waterfront residential development oriented toward a public park and Sydney Harbour, maximising outlook, amenity, and a strong connection to landscape and harbour front living.",
+            "A waterfront residential development oriented toward a public park and Sydney Harbour, maximising outlook, amenity, and a strong connection to landscape and harbour front living.",
             content: `
                 <p class="text-md">The residence occupies two narrow lots arranged in tandem, addressing two street frontages. The longitudinal planning strategy originally relied on extended circulation corridors. To improve spatial efficiency, ancillary services were integrated within primary living spaces through operable wall systems, enabling flexible use and reducing reliance on corridors.
                     The elongated building envelope introduced complexity to the external elevations. Visual impact was moderated through articulated indentations, varied materiality, and a restrained colour palette. Privacy along the length of the building was addressed using operable screening devices. High-performance thermal insulation systems were incorporated to offset energy impacts associated with large, glazed openings, while maximising daylight penetration to internal spaces, a key consideration for occupant wellbeing.

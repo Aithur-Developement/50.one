@@ -125,10 +125,10 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                 )}
             </div>
             <div className="flex sm:flex-row flex-col items-center justify-between gap-4">
-                <p className="text-sm text-[--white]">©2025 All Rights Reserved</p>
+                <p className="text-sm text-[--white]">©{new Date().getFullYear()} All Rights Reserved</p>
                 <div className="flex items-center gap-2">
                     <p className="text-sm text-[--white]">Designed & Developed by</p>
-                    <a href="" className="text-[--white] hover:text-[--primary] transition">
+                    <a href="https://aithur.com/" target="_blank" className="text-[--white] hover:text-[--primary] transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="69" height="18" viewBox="0 0 69 18" fill="none">
                             <g clipPath="url(#clip0_12910_272)">
                                 <path d="M7.12699 18.0002C5.5331 17.9982 4.25017 16.7085 4.25538 15.1135C4.26058 13.5264 5.54481 12.2406 7.12699 12.2373C8.71894 12.2347 10.0149 13.5382 10.0077 15.1363C10.0006 16.7234 8.71438 18.0021 7.12699 18.0002Z" fill="currentColor"/>
