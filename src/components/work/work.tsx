@@ -90,7 +90,7 @@ export default function Work() {
             imgSrc: "./work/3.jpg",
             title: "Urban Residential Development",
             location: "Leppington, Sydney",
-            date: "Oct 2014",
+            date: "Oct 2016",
             description:
             "Concept proposal for a high-density residential development over 4.3 hectares of existing farmland, rezoned for residential use.",
             content: `
@@ -110,7 +110,7 @@ export default function Work() {
             imgSrc: "./work/4.jpg",
             title: "Terrace Refurbishment",
             location: "Darlinghurst, Sydney",
-            date: "Nov 2024",
+            date: "Nov 2018",
             description:
             "The original street façade is reinstated to reflect the past, while the spaces behind are collaboratively designed to meet the clients’ contemporary aspirations.",
             content: `
@@ -133,7 +133,7 @@ export default function Work() {
             imgSrc: "./work/5.jpg",
             title: "Integrated Industrial Food Facility",
             location: "Auburn, Sydney",
-            date: "Nov 1999",
+            date: "Nov 2024",
             description:
             "A complex food manufacturing facility incorporating controlled inventory systems, value-added processing lines, and integrated logistics and distribution operations.",
             content: `

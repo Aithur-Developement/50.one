@@ -53,7 +53,7 @@ export default function About() {
             <div className="size-full px-6 sm:px-[4.688vw] xl:px-[4.167vw] py-[52px] sm:py-[98px] xl:py-[6.302vw]">
                 <div className="w-full xl:px-[1.25vw] flex xl:flex-row flex-col xl:items-center gap-6 sm:gap-[3.125vw] xl:gap-[3.75vw]">
                     <div className="w-full sm:w-[63.965vw] xl:w-[34.115vw] h-fit xl:h-[32.813vw] shrink-0">
-                        <img src="./about.jpg" className="w-full h-full object-cover object-scale-down" alt="about" />
+                        <img src="./about.jpg" className="w-full h-fit object-cover object-scale-down" alt="about" />
                     </div>
                     <div className="w-full flex flex-col gap-[36px] xl:gap-[4.167vw] text-[--white]">
                         <div className="flex flex-col gap-[36px] xl:gap-[1.875vw]">

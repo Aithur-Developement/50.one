@@ -66,7 +66,7 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                             </svg>
                             <div className="xl:w-full w-fit xl:text-start text-center flex flex-col gap-2">
                                 <h4 className="text-lg text-[--white]">Phone</h4>
-                                <a href="tel:0416151505" className="text-18 transition text-[--white] hover:text-[--primary]">0416 151 505</a>
+                                <a href="tel:+61416151505" className="text-18 transition text-[--white] hover:text-[--primary]">+61 416 151 505</a>
                             </div>
                         </div>
                         <div className="w-full p-6 xl:p-[1.25vw] xl:py-[1.667vw] flex items-start xl:justify-start justify-center gap-4 ">
@@ -89,8 +89,8 @@ export default function Footer(props: {theme?: 'v1' | 'v2'}) {
                         </svg>
                         <div className="xl:w-full w-fit xl:text-start text-center flex flex-col gap-2">
                             <h4 className="text-lg text-[--white]">Address</h4>
-                            <a href="https://www.google.com/maps/place/514+Parramatta+Rd,+Petersham+NSW+2049" target="_blank" rel="noopener noreferrer" className="text-18 transition text-[--white] hover:text-[--primary]">
-                                514 Parramatta Road, PETERSHAM NSW 2049
+                            <a href="https://www.google.com/maps/place/514+Parramatta+Rd,+Petersham+NSW+2049,+Australia" target="_blank" rel="noopener noreferrer" className="text-18 transition text-[--white] hover:text-[--primary]">
+                                514 Parramatta Road, PETERSHAM NSW 2049, Australia
                             </a>
                         </div>
                     </div>

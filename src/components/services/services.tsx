@@ -168,7 +168,7 @@ export default function Services() {
                                 id={`card-${index + 1}`}
                                 className="flex items-start gap-6 xl:gap-[1.25vw]" 
                             >
-                                <span className="w-[145px] xl:w-[7.552vw] text-3xl !font-poppins text-[--primary]">0{index + 1}</span>
+                                <span className="w-[145px] xl:w-[7.552vw] text-3xl !font-poppins !font-normal text-[--primary]">0{index + 1}</span>
                                 <div className="w-[500px] xl:w-[26.042vw] flex flex-col gap-6 p-6 xl:gap-[1.25vw] bg-[--dark] text-[--white]">
                                     <img src={service.imgSrc} className="w-full object-scale-down" alt="" />
                                     <div className="w-full flex flex-col gap-2">
@@ -199,7 +199,7 @@ export default function Services() {
                                                 <img src={item.imgSrc} className="w-full h-full object-cover" alt="" />
                                             </div>
                                             <div className="flex flex-col gap-1.5">
-                                                <span className="text-xl !font-poppins text-[--primary]">0{index + 1}</span>
+                                                <span className="text-xl !font-poppins !font-normal text-[--primary]">0{index + 1}</span>
                                                 <h3 className="text-xl !font-poppins text-[--white]">{item.title}</h3>
                                                 <p className="text-sm text-[--white]">{item.description}</p>
                                             </div>

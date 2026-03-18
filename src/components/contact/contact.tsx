@@ -166,8 +166,8 @@ export default function Contact() {
                             </svg>
                             <div className="w-full flex flex-col gap-2">
                                 <h4 className="text-lg text-[--white]">Address</h4>
-                                <a href="https://www.google.com/maps/place/514+Parramatta+Rd,+Petersham+NSW+2049" target="_blank" rel="noopener noreferrer" className="text-18 transition text-[--white] hover:text-[--primary]">
-                                    514 Parramatta Road, PETERSHAM NSW 2049
+                                <a href="https://www.google.com/maps/place/514+Parramatta+Rd,+Petersham+NSW+2049,+Australia" target="_blank" rel="noopener noreferrer" className="text-18 transition text-[--white] hover:text-[--primary]">
+                                    514 Parramatta Road, PETERSHAM NSW 2049, Australia
                                 </a>
                             </div>
                         </div>
