@@ -53,7 +53,7 @@ export default function Work() {
             imgSrc: "./work/1.jpg",
             title: "Waterfront Residence",
             location: "Russell Lea, Sydney",
-            date: "Nov 2014",
+            date: "2014",
             description:
             "A waterfront residential development oriented toward a public park and Sydney Harbour, maximising outlook, amenity, and a strong connection to landscape and harbour front living.",
             content: `
@@ -70,7 +70,7 @@ export default function Work() {
             imgSrc: "./work/2.jpg",
             title: "Skyline Hotel + Apartment Redevelopment",
             location: "CBD, Brisbane",
-            date: "Nov 2015",
+            date: "2015",
             description:
             "An 80-storey high-rise mixed-use building incorporating commercial and residential uses, designed with a strong geometric architectural expression and sustainable material systems. The building features high-performance glazed and metallic façades that provide panoramic outlooks while optimising environmental performance.",
             content: `
@@ -90,7 +90,7 @@ export default function Work() {
             imgSrc: "./work/3.jpg",
             title: "Urban Residential Development",
             location: "Leppington, Sydney",
-            date: "Oct 2016",
+            date: "2016",
             description:
             "Concept proposal for a high-density residential development over 4.3 hectares of existing farmland, rezoned for residential use.",
             content: `
@@ -110,7 +110,7 @@ export default function Work() {
             imgSrc: "./work/4.jpg",
             title: "Terrace Refurbishment",
             location: "Darlinghurst, Sydney",
-            date: "Nov 2018",
+            date: "2018",
             description:
             "The original street façade is reinstated to reflect the past, while the spaces behind are collaboratively designed to meet the clients’ contemporary aspirations.",
             content: `
@@ -133,7 +133,7 @@ export default function Work() {
             imgSrc: "./work/5.jpg",
             title: "Integrated Industrial Food Facility",
             location: "Auburn, Sydney",
-            date: "Nov 2024",
+            date: "2024",
             description:
             "A complex food manufacturing facility incorporating controlled inventory systems, value-added processing lines, and integrated logistics and distribution operations.",
             content: `
