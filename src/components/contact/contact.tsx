@@ -134,7 +134,7 @@ export default function Contact() {
                         )}
                     </div>
                     <div className="col-span-12 xl:col-span-6 flex flex-col xl:border-l border-[rgba(203,205,205,0.20)]">
-                        <div className="w-full flex sm:flex-row flex-col items-stretch border-b border-[rgba(203,205,205,0.20)]">
+                        {/* <div className="w-full flex sm:flex-row flex-col items-stretch border-b border-[rgba(203,205,205,0.20)]">
                             <div className="w-full p-6 xl:p-[1.25vw] flex items-start gap-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                                     <path d="M32.6667 4.66663H15.3333C12.3878 4.66663 10 7.05444 10 9.99996V38C10 40.9455 12.3878 43.3333 15.3333 43.3333H32.6667C35.6122 43.3333 38 40.9455 38 38V9.99996C38 7.05444 35.6122 4.66663 32.6667 4.66663Z" stroke="#F2032B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -158,8 +158,8 @@ export default function Contact() {
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="w-full p-6 xl:p-[1.25vw] flex items-start gap-4 border-b border-[rgba(203,205,205,0.20)]">
+                        </div> */}
+                        {/* <div className="w-full p-6 xl:p-[1.25vw] flex items-start gap-4 border-b border-[rgba(203,205,205,0.20)]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                                 <path d="M9.59863 21.6125C9.59863 13.6527 16.0458 7.19983 23.9986 7.19983C31.9515 7.19983 38.3986 13.6527 38.3986 21.6125C38.3986 29.5724 30.9236 36.0814 26.745 39.7592C25.1686 41.1466 22.8286 41.1466 21.2523 39.7592C17.0734 36.0814 9.59863 28.8188 9.59863 21.6125Z" stroke="#F2032B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                 <path d="M23.9986 23.9998C25.3241 23.9998 26.3986 22.9253 26.3986 21.5998C26.3986 20.2743 25.3241 19.1998 23.9986 19.1998C22.6731 19.1998 21.5986 20.2743 21.5986 21.5998C21.5986 22.9253 22.6731 23.9998 23.9986 23.9998Z" fill="#F2032B" stroke="#F2032B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -170,8 +170,8 @@ export default function Contact() {
                                     514 Parramatta Road, PETERSHAM NSW 2049, Australia
                                 </a>
                             </div>
-                        </div>
-                        <div className="size-full xl:h-[20.833vw] min-h-[400px] xl:min-h-[20.833vw]">
+                        </div> */}
+                        <div className="size-full xl:h-[20.833vw] min-h-[400px] xl:min-h-full">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.278309986518!2d151.15282027569526!3d-33.89237902393426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b019a4bd1f5f%3A0x4fcbec4c596cb736!2s514%20Parramatta%20Rd%2C%20Petersham%20NSW%202049%2C%20Australia!5e0!3m2!1sen!2sau!4v1700739020000"
                                 width="100%"
