@@ -159,9 +159,11 @@ export default function Work() {
                 <p class="text-md">
                     A 60-storey mixed-use redevelopment of a CBD commercial-zoned site, incorporating retail, hotel, and build-to-rent (BTR) components.
                 </p>
+                <br/>
                 <p class="text-md">
                     The design adopts a minimalist architectural expression, defined by clean lines and an efficient built form. The scale and configuration position the development to respond to strong CBD demand across residential rental, short-stay accommodation, and activated ground-floor retail uses.
                 </p>
+                <br/>
                 <p class="text-md">
                     Sustainability principles are embedded throughout, targeting high environmental performance through energy-efficient systems, optimised façade design, and reduced operational carbon, aligning with contemporary ESG expectations.
                 </p>
